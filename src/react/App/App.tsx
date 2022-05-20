@@ -1,5 +1,11 @@
+import { ToastContainer } from 'react-toastify';
+
 function App() {
-  return <div>App</div>;
+  return (
+    <>
+      <ToastContainer position="bottom-right" />
+    </>
+  );
 }
 
 export default App;
