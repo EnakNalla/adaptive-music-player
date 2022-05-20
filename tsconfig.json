@@ -16,7 +16,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@test-utils/*": ["./src/react/test-utils/*"]
+      "@test-utils/*": ["./src/react/test-utils/*"],
+      "@stores": ["./src/react/stores/StoreProvider.tsx"]
     }
   },
   "include": ["src/@types", "src/react"],
