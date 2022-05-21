@@ -5,4 +5,7 @@ type DeepPartial<T> = T extends object
     }
   : T;
 
-interface ElectronStore {}
+interface ElectronStore {
+  timers: Timer[];
+  configs: SaveConfig[];
+}

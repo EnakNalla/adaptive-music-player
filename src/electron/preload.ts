@@ -11,6 +11,20 @@ export const preloadApi = {
       title: path.basename(p, path.extname(p)),
       path: path.join('file://', path.normalize(p))
     }));
+  },
+
+  getTimers(): Promise<Timer[]> {
+    return ipcRenderer.invoke('getTimers');
+  },
+  saveTimers(timers: Timer[]): void {
+    ipcRenderer.send('saveTimers', timers);
+  },
+
+  getConfigs(): Promise<SavedConfig[]> {
+    return ipcRenderer.invoke('getConfigs');
+  },
+  saveConfigs(configs: SavedConfig[]): void {
+    ipcRenderer.send('saveConfigs', configs);
   }
 };
 

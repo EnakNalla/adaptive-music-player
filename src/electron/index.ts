@@ -1,7 +1,10 @@
 import { app, BrowserWindow, dialog, ipcMain } from 'electron';
 import { join } from 'path';
+import { storeIpc } from './store';
 
 let window: BrowserWindow;
+
+storeIpc();
 
 const createWindow = () => {
   window = new BrowserWindow({
