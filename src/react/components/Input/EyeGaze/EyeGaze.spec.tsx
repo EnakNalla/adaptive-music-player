@@ -13,9 +13,10 @@ describe('<EyeGaze />', () => {
       playerStore: {
         player,
         inputOptions: {
-          fixedPosition: true
+          fixedPosition: false
         },
-        inputSize: { size: 100, imgSize: 70 }
+        inputSize: { size: 100, imgSize: 70 },
+        getRandomPosition: jest.fn().mockReturnValue({ top: '5px', left: '5px' })
       }
     });
 
