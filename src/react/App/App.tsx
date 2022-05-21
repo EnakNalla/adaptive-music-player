@@ -1,3 +1,4 @@
+import Home from '@components/Home/Home';
 import Input from '@components/Input/Input';
 import Player from '@components/Player';
 import Visualiser from '@components/Visualiser/Visualiser';
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <>
+      {!store.playerStore.enabled && <Home />}
       <Input />
       <Player />
       <Visualiser />
