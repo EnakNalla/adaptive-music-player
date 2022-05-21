@@ -2,6 +2,7 @@ import Home from '@components/Home/Home';
 import Input from '@components/Input/Input';
 import Player from '@components/Player';
 import Visualiser from '@components/Visualiser/Visualiser';
+import { Box, CircularProgress } from '@mui/material';
 import { useStore } from '@stores';
 import { observer } from 'mobx-react-lite';
 import { useEffect } from 'react';
@@ -13,6 +14,14 @@ function App() {
   useEffect(() => {
     store.initData();
   }, []);
+
+  if (store.loading) {
+    return (
+      <Box display="flex" alignItems="center" minHeight="100%" justifyContent="center">
+        <CircularProgress />
+      </Box>
+    );
+  }
 
   return (
     <>
