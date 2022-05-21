@@ -8,5 +8,6 @@ window.api = {
   saveTimers: jest.fn(),
   getConfigs: jest.fn(),
   saveConfigs: jest.fn(),
-  setFullscreen: jest.fn()
+  setFullscreen: jest.fn(),
+  saveMissHits: jest.fn().mockResolvedValue({ type: 'success' })
 };

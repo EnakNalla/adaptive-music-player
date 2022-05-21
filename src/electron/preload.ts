@@ -29,6 +29,10 @@ export const preloadApi = {
 
   setFullscreen(bool: boolean) {
     ipcRenderer.send('setFullscreen', bool);
+  },
+
+  saveMissHits(playlistName: string, content: string) {
+    return ipcRenderer.invoke('saveMissHits', playlistName, content);
   }
 };
 

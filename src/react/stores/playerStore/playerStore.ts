@@ -169,4 +169,15 @@ export default class PlayerStore {
       left: Math.round(Math.random() * spaceHeight) + 'px'
     };
   };
+
+  saveMissHits = async (content: string) => {
+    const res = await window.api.saveMissHits(
+      this.root.configStore.loadedConfig ?? 'miss-hits',
+      content
+    );
+    if (res.type === 'error') toast.error(res.msg);
+    else toast.success(res.msg);
+  };
+
+  resetMissHits = () => (this.missHits = {});
 }

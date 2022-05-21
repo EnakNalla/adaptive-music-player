@@ -306,4 +306,46 @@ describe('PlayerStore', () => {
       expect(playerStore.duration).toBe('01:40');
     });
   });
+
+  describe('getRandomPosition', () => {
+    it('should return { top: string, left: string}', () => {
+      const positions = playerStore.getRandomPosition();
+
+      expect(positions).toEqual(
+        expect.objectContaining({
+          left: expect.any(String),
+          top: expect.any(String)
+        })
+      );
+    });
+  });
+
+  describe('saveMissHits', () => {
+    it('should call api.saveMissHits', async () => {
+      jest.spyOn(toast, 'success');
+      await playerStore.saveMissHits('test');
+
+      expect(window.api.saveMissHits).toHaveBeenCalledWith('miss-hits', 'test');
+      expect(toast.success).toHaveBeenCalled();
+    });
+
+    it('should toast error from api.saveMissHits', async () => {
+      jest.spyOn(toast, 'error');
+      window.api.saveMissHits = jest.fn().mockReturnValue({ type: 'error' });
+
+      await playerStore.saveMissHits('test');
+
+      expect(toast.error).toHaveBeenCalled();
+    });
+  });
+
+  describe('resetMissHits', () => {
+    it('should set missHits to {}', () => {
+      playerStore.missHits = { test: ['1 miss hit'] };
+
+      playerStore.resetMissHits();
+
+      expect(playerStore.missHits).toEqual({});
+    });
+  });
 });
