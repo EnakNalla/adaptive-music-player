@@ -1,5 +1,6 @@
 import Home from '@components/Home/Home';
 import Input from '@components/Input/Input';
+import InputPrompt from '@components/Input/InputPrompt';
 import Player from '@components/Player';
 import Visualiser from '@components/Visualiser/Visualiser';
 import { Box, CircularProgress } from '@mui/material';
@@ -22,6 +23,8 @@ function App() {
       </Box>
     );
   }
+
+  if (!store.configStore.inputOptions.method) return <InputPrompt />;
 
   return (
     <>
