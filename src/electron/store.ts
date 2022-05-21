@@ -17,7 +17,7 @@ const schema: Schema<ElectronStore> = {
       { name: 'Indefinite', playtime: 0, isDefault: false }
     ]
   },
-  configs: { type: 'array' }
+  configs: { type: 'array', default: [] }
 };
 
 const store = new Store({ schema });
