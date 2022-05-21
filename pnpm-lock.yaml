@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@foobar404/wave': ^1.0.0
   '@testing-library/dom': ^8.13.0
   '@testing-library/jest-dom': ^5.16.4
   '@testing-library/react': ^13.2.0
@@ -33,6 +34,7 @@ specifiers:
   wait-on: ^6.0.1
 
 devDependencies:
+  '@foobar404/wave': 1.2.8
   '@testing-library/dom': 8.13.0
   '@testing-library/jest-dom': 5.16.4
   '@testing-library/react': 13.2.0_ef5jwxihqo6n7gxfmzogljlgcm
@@ -519,6 +521,10 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@foobar404/wave/1.2.8:
+    resolution: {integrity: sha512-6jL3ZzSSk/wdNcBrdA5bB1ex8WMybBJaTkVUq4RcU++twOVuBL5VUg/8apovAX9KrOgU2gVuU3li+P5f97WsKQ==}
     dev: true
 
   /@hapi/hoek/9.3.0:

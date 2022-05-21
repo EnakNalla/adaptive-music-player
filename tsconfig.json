@@ -17,7 +17,8 @@
     "jsx": "react-jsx",
     "paths": {
       "@test-utils/*": ["./src/react/test-utils/*"],
-      "@stores": ["./src/react/stores/StoreProvider.tsx"]
+      "@stores": ["./src/react/stores/StoreProvider.tsx"],
+      "@components/*": ["./src/react/components/*"]
     }
   },
   "include": ["src/@types", "src/react"],
