@@ -8,12 +8,13 @@ function Input() {
   const { playerStore } = useStore();
 
   useEffect(() => {
+    if (playerStore.visualiserActive || !playerStore.enabled) return;
     document.addEventListener('keyup', playerStore.onKeyup);
 
     return () => document.removeEventListener('keyup', playerStore.onKeyup);
   }, []);
 
-  if (playerStore.visualiserActive) return null;
+  if (playerStore.visualiserActive || !playerStore.enabled) return null;
 
   switch (playerStore.inputOptions.method) {
     case 'mouse':

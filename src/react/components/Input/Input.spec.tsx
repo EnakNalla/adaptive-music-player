@@ -11,7 +11,8 @@ describe('<Input />', () => {
           fixedPosition: true,
           method: 'switch'
         },
-        inputSize: { size: 100, imgSize: 70 }
+        inputSize: { size: 100, imgSize: 70 },
+        enabled: true
       }
     });
 
@@ -28,7 +29,8 @@ describe('<Input />', () => {
           fixedPosition: true,
           method: 'eye gaze'
         },
-        inputSize: { size: 100, imgSize: 70 }
+        inputSize: { size: 100, imgSize: 70 },
+        enabled: true
       }
     });
   });
@@ -41,7 +43,8 @@ describe('<Input />', () => {
           fixedPosition: true,
           method: 'mouse'
         },
-        inputSize: { size: 100, imgSize: 70 }
+        inputSize: { size: 100, imgSize: 70 },
+        enabled: true
       }
     });
   });
@@ -54,7 +57,8 @@ describe('<Input />', () => {
           fixedPosition: true,
           method: 'touch'
         },
-        inputSize: { size: 100, imgSize: 70 }
+        inputSize: { size: 100, imgSize: 70 },
+        enabled: true
       }
     });
   });
