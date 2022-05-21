@@ -22,6 +22,7 @@ export default class ConfigStore {
   };
   timers: Timer[] = [];
   savedConfigs: SavedConfig[] = [];
+  loadedConfig?: string;
 
   constructor(private root: RootStore) {
     makeAutoObservable(this);
@@ -82,13 +83,19 @@ export default class ConfigStore {
     window.api.saveTimers(JSON.parse(JSON.stringify(this.timers)));
   };
 
-  saveConfig = (name: string, update?: boolean) => {
+  saveConfig = (name: string, loadOnInit = false, update?: boolean) => {
     if (!update && this.savedConfigs.some(c => c.name === name)) {
       throw new Error(`config ${name} already exists`);
     }
 
+    if (loadOnInit) {
+      const initialConfig = this.savedConfigs.find(c => c.loadOnInit);
+      if (initialConfig) initialConfig.loadOnInit = false;
+    }
+
     this.savedConfigs.push({
       name,
+      loadOnInit,
       songs: this.songs,
       inputOptions: this.inputOptions,
       visualiserOptions: this.visualiserOptions
@@ -102,5 +109,13 @@ export default class ConfigStore {
     this.savedConfigs.splice(index, 1);
 
     window.api.saveConfigs(JSON.parse(JSON.stringify(this.savedConfigs)));
+  };
+
+  loadConfig = (config: SavedConfig) => {
+    this.inputOptions = config.inputOptions;
+    this.visualiserOptions = config.visualiserOptions;
+    this.loadedConfig = config.name;
+    this.root.playerStore.songs = config.songs;
+    this.root.playerStore.song = config.songs[0];
   };
 }

@@ -110,6 +110,16 @@ describe('ConfigStore', () => {
 
       expect(() => configStore.saveConfig('test')).toThrowError('config test already exists');
     });
+
+    it('should set current loadOnInit to false when loadOnInit is true', () => {
+      // @ts-ignore
+      configStore.savedConfigs = [{ name: 'test', loadOnInit: true }];
+
+      configStore.saveConfig('testing', true);
+
+      expect(configStore.savedConfigs[0]).toMatchObject({ name: 'test', loadOnInit: false });
+      expect(configStore.savedConfigs[1]).toMatchObject({ name: 'testing', loadOnInit: true });
+    });
   });
 
   describe('removeConfig', () => {
@@ -120,6 +130,27 @@ describe('ConfigStore', () => {
       configStore.removeConfig('test');
 
       expect(configStore.savedConfigs).toEqual([]);
+    });
+  });
+
+  describe('loadConfig', () => {
+    it('should set properties in store from config', () => {
+      configStore.loadConfig({
+        name: 'test',
+        songs: [],
+        // @ts-ignore
+        inputOptions: {
+          method: 'eye gaze'
+        },
+        // @ts-ignore
+        visualiserOptions: {
+          stroke: 5
+        }
+      });
+
+      expect(configStore.loadedConfig).toBe('test');
+      expect(configStore.inputOptions).toEqual({ method: 'eye gaze' });
+      expect(configStore.visualiserOptions).toEqual({ stroke: 5 });
     });
   });
 });

@@ -61,4 +61,5 @@ interface SavedConfig {
   songs: Song[];
   visualiserOptions: VisualiserOptions;
   inputOptions: InputOptions;
+  loadOnInit: boolean;
 }
