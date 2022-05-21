@@ -5,6 +5,7 @@ import '@fontsource/roboto/700.css';
 import StoreProvider from '@stores';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import 'react-toastify/dist/ReactToastify.min.css';
 import App from './App/App';
 import './styles.css';
 
