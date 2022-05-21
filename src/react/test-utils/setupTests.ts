@@ -7,5 +7,6 @@ window.api = {
   getTimers: jest.fn().mockResolvedValue([timerStub()]),
   saveTimers: jest.fn(),
   getConfigs: jest.fn(),
-  saveConfigs: jest.fn()
+  saveConfigs: jest.fn(),
+  setFullscreen: jest.fn()
 };

@@ -25,6 +25,10 @@ export const preloadApi = {
   },
   saveConfigs(configs: SavedConfig[]): void {
     ipcRenderer.send('saveConfigs', configs);
+  },
+
+  setFullscreen(bool: boolean) {
+    ipcRenderer.send('setFullscreen', bool);
   }
 };
 
