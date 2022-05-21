@@ -1,3 +1,4 @@
+import Input from '@components/Input/Input';
 import Player from '@components/Player';
 import Visualiser from '@components/Visualiser/Visualiser';
 import { useStore } from '@stores';
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <>
+      <Input />
       <Player />
       <Visualiser />
       <ToastContainer position="bottom-right" />

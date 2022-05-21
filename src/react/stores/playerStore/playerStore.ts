@@ -26,6 +26,29 @@ export default class PlayerStore {
     return this.root.configStore.inputOptions;
   }
 
+  get inputSize() {
+    switch (this.inputOptions.size) {
+      case 'small': {
+        return {
+          size: 100,
+          imgSize: 50
+        };
+      }
+      case 'medium': {
+        return {
+          size: 150,
+          imgSize: 70
+        };
+      }
+      case 'large': {
+        return {
+          size: 200,
+          imgSize: 100
+        };
+      }
+    }
+  }
+
   get timers() {
     return this.root.configStore.timers;
   }
@@ -136,4 +159,14 @@ export default class PlayerStore {
   };
 
   private padWith0 = (playtime: number) => (playtime < 10 ? '0' + playtime : playtime);
+
+  getRandomPosition = () => {
+    const spaceWidth = window.innerHeight - (this.inputSize.size + 20);
+    const spaceHeight = window.innerWidth - (this.inputSize.size + 20);
+
+    return {
+      top: Math.round(Math.random() * spaceWidth) + 'px',
+      left: Math.round(Math.random() * spaceHeight) + 'px'
+    };
+  };
 }

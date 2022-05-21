@@ -12,7 +12,8 @@ const DEFAULT_COLOURS = {
 export default class ConfigStore {
   inputOptions: InputOptions = {
     size: 'medium',
-    dwellTime: 1
+    dwellTime: 1,
+    fixedPosition: false
   };
   visualiserOptions: VisualiserOptions = {
     type: 'cubes',

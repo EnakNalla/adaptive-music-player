@@ -23,6 +23,22 @@ describe('PlayerStore', () => {
     playerStore = rootStore.playerStore;
   });
 
+  describe('inputSizes', () => {
+    it('should return the correct values for "small"', () => {
+      rootStore.configStore.inputOptions.size = 'small';
+      expect(playerStore.inputSize).toEqual({ size: 100, imgSize: 50 });
+    });
+
+    it('should return the correct values for "medium"', () => {
+      expect(playerStore.inputSize).toEqual({ size: 150, imgSize: 70 });
+    });
+
+    it('should return the correct values for "large"', () => {
+      rootStore.configStore.inputOptions.size = 'large';
+      expect(playerStore.inputSize).toEqual({ size: 200, imgSize: 100 });
+    });
+  });
+
   describe('setSong', () => {
     it('should set song from value', () => {
       playerStore.setSong(songStub());

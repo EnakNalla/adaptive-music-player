@@ -6,6 +6,7 @@ interface InputOptions {
   size: 'small' | 'medium' | 'large';
   // only for eye-gaze, how long to animate the circle before playing
   dwellTime: number;
+  fixedPosition: boolean;
 }
 
 interface Timer {
