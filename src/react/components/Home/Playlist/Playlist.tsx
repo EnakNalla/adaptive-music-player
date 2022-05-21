@@ -1,4 +1,4 @@
-import Confirm from '@components/Confirm';
+import Confirm from '@components/Confirm/Confirm';
 import {
   Box,
   Button,
@@ -28,7 +28,7 @@ function Playlist() {
         <FormControlLabel
           checked={playerStore.shuffle}
           onChange={playerStore.toggleShuffle}
-          control={<Switch defaultChecked />}
+          control={<Switch />}
           label="Shuffle"
         />
       </Box>
