@@ -86,6 +86,7 @@ export default class PlayerStore {
   onKeyup = (event: KeyboardEvent) => {
     if (event.code === 'Escape') {
       this.player?.pause();
+      this.enabled = false;
       return;
     }
 
