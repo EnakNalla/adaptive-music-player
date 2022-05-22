@@ -1,5 +1,6 @@
 body,
-html {
+html,
+#root {
   height: 99%;
   width: 99%;
 }
@@ -7,6 +8,7 @@ html {
 .input-fixed {
   display: flex;
   align-items: center;
+  min-height: 99%;
 }
 
 .input-random {
