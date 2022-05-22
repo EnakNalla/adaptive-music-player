@@ -13,7 +13,7 @@ function Switch() {
         height={`${playerStore.inputSize.size}px`}
       >
         <img
-          src="/switch.png"
+          src="./switch.png"
           className="input-img"
           alt="Jellybean switch"
           width={playerStore.inputSize.imgSize}

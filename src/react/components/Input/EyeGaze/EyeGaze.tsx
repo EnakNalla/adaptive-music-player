@@ -39,7 +39,7 @@ function EyeGaze() {
         height={`${playerStore.inputSize.size}px`}
       >
         <img
-          src="/eye.png"
+          src="./eye.png"
           className="input-img"
           alt="eye"
           width={playerStore.inputSize.imgSize}

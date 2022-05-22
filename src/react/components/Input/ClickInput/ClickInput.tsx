@@ -30,7 +30,7 @@ function ClickInput({ touch }: Props) {
         aria-label={touch ? 'touch input' : 'mouse input'}
       >
         <img
-          src={touch ? '/touch.png' : '/mouse.png'}
+          src={touch ? './touch.png' : '.s/mouse.png'}
           className="input-img"
           alt={touch ? 'touch symbol' : 'computer mouse symbol'}
           width={playerStore.inputSize.imgSize}

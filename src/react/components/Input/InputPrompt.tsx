@@ -24,7 +24,7 @@ function InputPrompt() {
             <CardActionArea aria-label="mouse input method select">
               <CardContent>
                 <img
-                  src="/mouse.png"
+                  src="./mouse.png"
                   alt="computer mouse symbol"
                   width="100"
                   height="100"
@@ -44,7 +44,7 @@ function InputPrompt() {
             <CardActionArea aria-label="touch input method select">
               <CardContent>
                 <img
-                  src="/touch.png"
+                  src="./touch.png"
                   alt="touch symbol"
                   width="100"
                   height="100"
@@ -64,7 +64,7 @@ function InputPrompt() {
             <CardActionArea aria-label="eye gaze input method select">
               <CardContent>
                 <img
-                  src="/eye.png"
+                  src="./eye.png"
                   alt="eye symbol"
                   width="100"
                   height="100"
@@ -84,7 +84,7 @@ function InputPrompt() {
             <CardActionArea aria-label="switch input method select">
               <CardContent>
                 <img
-                  src="/switch.png"
+                  src="./switch.png"
                   alt="jellybean switch"
                   width="100"
                   height="100"

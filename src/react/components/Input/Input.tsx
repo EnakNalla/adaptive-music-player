@@ -20,7 +20,6 @@ function Input() {
   switch (playerStore.inputOptions.method) {
     case 'mouse':
       return <ClickInput />;
-
     case 'eye gaze':
       return <EyeGaze />;
     case 'touch':
