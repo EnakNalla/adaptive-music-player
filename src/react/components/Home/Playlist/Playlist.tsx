@@ -35,7 +35,7 @@ function Playlist() {
 
       <TableContainer
         sx={{
-          maxHeight: '70vh',
+          maxHeight: '90vh',
           overflowY: 'auto'
         }}
       >
