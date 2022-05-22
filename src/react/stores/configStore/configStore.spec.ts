@@ -31,6 +31,16 @@ describe('ConfigStore', () => {
     });
   });
 
+  describe('resetColours', () => {
+    it('should set visualiser colours to defaults', () => {
+      configStore.visualiserOptions.colours.primary = '#eaeaea';
+
+      configStore.resetColours();
+
+      expect(configStore.visualiserOptions.colours.primary).toBe('#d92027');
+    });
+  });
+
   describe('addTimer', () => {
     it('should add a timer to timers', () => {
       const timer = timerStub(false);

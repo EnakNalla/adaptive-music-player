@@ -47,6 +47,8 @@ export default class ConfigStore {
     this.visualiserOptions[key] = value;
   };
 
+  resetColours = () => (this.visualiserOptions.colours = DEFAULT_COLOURS);
+
   addTimer = (timer: Timer) => {
     if (this.timers.some(t => t.name === timer.name)) {
       throw new Error(`timer ${timer.name} already exists`);
