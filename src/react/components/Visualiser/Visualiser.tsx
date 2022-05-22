@@ -26,6 +26,9 @@ const Visualiser = () => {
         configStore.visualiserOptions.colours.quaternary
       ]
     });
+
+    // FIXME quick and dirty hack. The visualiser doesn't show until the user has clicked the screen?
+    canvasElm.current.click();
   });
 
   if (!playerStore.visualiserActive) return null;
