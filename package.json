@@ -14,10 +14,13 @@
     "vite:build": "tsc && vite build",
     "electron:build": "tsc -p ./src/electron/tsconfig.json",
     "electron:dev": "wait-on tcp:3000 && cross-env IS_DEV=true electron .",
-    "dev": "concurrently -k \"vite\" \"pnpm electron:build && pnpm electron:dev\"",
-    "build": "cross-env BUILD=true pnpm vite:build && pnpm electron:build",
-    "out:win": "pnpm build && electron-builder build --win",
-    "out:linux": "pnpm build && electron-builder build --linux"
+    "dev": "concurrently -k \"vite\" \"yarn electron:build && yarn electron:dev\"",
+    "build": "cross-env BUILD=true yarn vite:build && yarn electron:build",
+    "out:win": "yarn build && electron-builder build --win",
+    "out:linux": "yarn build && electron-builder build --linux"
+  },
+  "dependencies": {
+    "electron-store": "^8.0.1"
   },
   "devDependencies": {
     "@emotion/react": "^11.9.0",
@@ -40,7 +43,6 @@
     "cross-env": "^7.0.3",
     "electron": "^18.2.4",
     "electron-builder": "^23.0.3",
-    "electron-store": "^8.0.1",
     "eslint": "^8.15.0",
     "eslint-plugin-react": "^7.30.0",
     "jest": "^28.1.0",
