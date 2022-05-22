@@ -71,4 +71,8 @@ describe('<Input />', () => {
       }
     });
   });
+
+  it('should not render when there is no method', () => {
+    render(<Input />, { playerStore: { enabled: true, inputOptions: {} } });
+  });
 });
