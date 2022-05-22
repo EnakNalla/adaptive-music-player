@@ -132,6 +132,42 @@ describe('ConfigStore', () => {
     });
   });
 
+  describe('updateLoadOnInit', () => {
+    it('should set savedConfig.loadOnInit to true', () => {
+      // @ts-ignore
+      configStore.savedConfigs = [{ name: 'test', loadOnInit: false }];
+
+      configStore.updateLoadOnInit('test', true);
+
+      expect(window.api.saveConfigs).toHaveBeenCalledWith([{ name: 'test', loadOnInit: true }]);
+    });
+
+    it('should set current loadOnInit to false and new to true', () => {
+      configStore.savedConfigs = [
+        // @ts-ignore
+        { name: 'test', loadOnInit: false },
+        // @ts-ignore
+        { name: 'test2', loadOnInit: true }
+      ];
+
+      configStore.updateLoadOnInit('test', true);
+
+      expect(window.api.saveConfigs).toHaveBeenCalledWith([
+        { name: 'test', loadOnInit: true },
+        { name: 'test2', loadOnInit: false }
+      ]);
+    });
+
+    it('should set loadOnInit to false', () => {
+      // @ts-ignore
+      configStore.savedConfigs = [{ name: 'test', loadOnInit: true }];
+
+      configStore.updateLoadOnInit('test', false);
+
+      expect(window.api.saveConfigs).toHaveBeenCalledWith([{ name: 'test', loadOnInit: false }]);
+    });
+  });
+
   describe('removeConfig', () => {
     it('should remove config from savedConfigs', () => {
       // @ts-ignore

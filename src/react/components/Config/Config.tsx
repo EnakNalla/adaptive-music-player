@@ -1,5 +1,6 @@
 import { Box, Button, Grid, Typography } from '@mui/material';
 import InputConfig from './InputConfig/InputConfig';
+import SavedConfigs from './SavedConfigs/SavedConfigs';
 import VisualiserConfig from './VisualiserConfig/VisualiserConfig';
 
 interface Props {
@@ -24,6 +25,10 @@ function Config({ setShowConfig }: Props) {
 
         <Grid item xs={12} sm={4}>
           <VisualiserConfig />
+        </Grid>
+
+        <Grid item xs={12} sm={4}>
+          <SavedConfigs />
         </Grid>
       </Grid>
     </>

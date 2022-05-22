@@ -106,6 +106,17 @@ export default class ConfigStore {
     window.api.saveConfigs(JSON.parse(JSON.stringify(this.savedConfigs)));
   };
 
+  updateLoadOnInit = (name: string, bool: boolean) => {
+    if (bool) {
+      const current = this.savedConfigs.find(c => c.loadOnInit);
+      if (current) current.loadOnInit = false;
+    }
+
+    this.savedConfigs.find(c => c.name === name)!.loadOnInit = bool;
+
+    window.api.saveConfigs(JSON.parse(JSON.stringify(this.savedConfigs)));
+  };
+
   removeConfig = (name: string) => {
     const index = this.savedConfigs.findIndex(c => c.name === name);
     this.savedConfigs.splice(index, 1);
