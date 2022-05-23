@@ -43,7 +43,7 @@ describe('<InputConfig />', () => {
       }
     });
 
-    await userEvent.click(screen.getByLabelText('Random position'));
+    await userEvent.click(screen.getByLabelText('Fixed position'));
 
     expect(setInputOption).toHaveBeenCalledWith('fixedPosition', true);
   });

@@ -48,7 +48,7 @@ function InputConfig() {
             onChange={e => configStore.setInputOption('fixedPosition', e.target.checked)}
           />
         }
-        label="Random position"
+        label="Fixed position"
       />
 
       <FormControl fullWidth margin="normal">
