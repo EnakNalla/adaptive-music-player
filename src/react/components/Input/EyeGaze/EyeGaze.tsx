@@ -25,6 +25,7 @@ function EyeGaze() {
         className="circle"
         aria-label="eye gaze input"
         onMouseEnter={() => {
+          clearTimeout(timeout);
           innerCircle.current!.classList.add('animate');
           timeout = setTimeout(
             () => playerStore.player?.play(),
